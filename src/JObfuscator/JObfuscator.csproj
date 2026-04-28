@@ -1,0 +1,34 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <RootNamespace>PELock</RootNamespace>
+
+    <!-- NuGet packaging -->
+    <PackageId>JObfuscator</PackageId>
+    <Version>1.0.0</Version>
+    <Authors>Bartosz Wójcik</Authors>
+    <Company>PELock</Company>
+    <Description>JObfuscator Web API client for .NET — obfuscate and protect Java source code via the PELock JObfuscator service.</Description>
+    <PackageTags>java;obfuscator;obfuscation;pelock;jobfuscator;protection</PackageTags>
+    <PackageLicenseExpression>Apache-2.0</PackageLicenseExpression>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
+    <PackageProjectUrl>https://www.pelock.com/products/jobfuscator</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/PELock/JObfuscator-CSharp</RepositoryUrl>
+    <RepositoryType>git</RepositoryType>
+    <NeutralLanguage>en</NeutralLanguage>
+    <IncludeSymbols>true</IncludeSymbols>
+    <SymbolPackageFormat>snupkg</SymbolPackageFormat>
+    <!-- NuGet output: repository root ("SDK main directory") -->
+    <PackageOutputPath>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\..'))</PackageOutputPath>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Include="..\..\README.md" Pack="true" PackagePath="\" Link="README.md" />
+    <!-- README-relative images (.\\img\\… on disk → img/ in package) -->
+    <None Include="..\..\img\**\*" Pack="true" PackagePath="\img\" />
+  </ItemGroup>
+
+</Project>
