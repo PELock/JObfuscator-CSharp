@@ -1,8 +1,8 @@
 # JObfuscator — Java Source Code Obfuscation & Protection
 
-[![NuGet](https://raw.githubusercontent.com/PELock/JObfuscator-CSharp/main/img/badge-nuget.svg)](https://www.nuget.org/packages/JObfuscator/)
-[![License](https://raw.githubusercontent.com/PELock/JObfuscator-CSharp/main/img/badge-license.svg)](LICENSE)
-[![Target](https://raw.githubusercontent.com/PELock/JObfuscator-CSharp/main/img/badge-dotnet.svg)](https://dotnet.microsoft.com/)
+[![NuGet version](https://img.shields.io/nuget/v/JObfuscator?label=NuGet)](https://www.nuget.org/packages/JObfuscator/)
+[![License](https://img.shields.io/nuget/l/JObfuscator?label=license)](LICENSE)
+[![Target](https://img.shields.io/badge/.NET-8.0-512BD4?logo=dotnet&logoColor=white)](https://dotnet.microsoft.com/)
 
 **JObfuscator** is a source code obfuscator for the Java programming language. It can protect your Java source code and algorithms from hacking, cracking, reverse engineering, decompilation, and technology theft.
 
