@@ -8,13 +8,14 @@
 
     <!-- NuGet packaging -->
     <PackageId>JObfuscator</PackageId>
-    <Version>1.0.0</Version>
+    <Version>1.0.1</Version>
     <Authors>Bartosz Wójcik</Authors>
     <Company>PELock</Company>
     <Description>JObfuscator Web API client for .NET — obfuscate and protect Java source code via the PELock JObfuscator service.</Description>
     <PackageTags>java;obfuscator;obfuscation;pelock;jobfuscator;protection</PackageTags>
     <PackageLicenseExpression>Apache-2.0</PackageLicenseExpression>
     <PackageReadmeFile>README.md</PackageReadmeFile>
+    <PackageIcon>img/jobfuscator-icon-128.png</PackageIcon>
     <PackageProjectUrl>https://www.pelock.com/products/jobfuscator</PackageProjectUrl>
     <RepositoryUrl>https://github.com/PELock/JObfuscator-CSharp</RepositoryUrl>
     <RepositoryType>git</RepositoryType>
