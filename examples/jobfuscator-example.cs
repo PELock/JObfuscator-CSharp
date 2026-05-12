@@ -23,11 +23,6 @@ var myJObfuscator = new JObfuscator("ABCD-ABCD-ABCD-ABCD");
 myJObfuscator.EnableCompression = true;
 
 //
-// strip Java comments during parse (recommended for cleaner output size)
-//
-myJObfuscator.RemoveComments = true;
-
-//
 // extract int / char / double / string literals into encrypted array tables (early pipeline)
 //
 myJObfuscator.ArrayIntCrypt = true;

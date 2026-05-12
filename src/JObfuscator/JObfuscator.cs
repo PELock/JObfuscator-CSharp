@@ -19,6 +19,9 @@ public sealed class JObfuscator
 {
     private const string DefaultUserAgent = "PELock JObfuscator";
 
+    // Sent as remove_comments on obfuscate requests only (not a public SDK option).
+    private const bool EmitRemoveCommentsOnObfuscate = true;
+
     private readonly HttpClient _httpClient;
     private readonly string? _apiKey;
 
@@ -58,7 +61,6 @@ public sealed class JObfuscator
     public bool IntsToArrays { get; set; } = true;
     public bool DblsToArrays { get; set; } = true;
 
-    public bool RemoveComments { get; set; } = true;
     public bool DblsMathCrypt { get; set; } = true;
     public bool StringCharVault { get; set; } = true;
     public bool IntsFromDoubleMath { get; set; } = true;
@@ -130,8 +132,9 @@ public sealed class JObfuscator
         if (!string.IsNullOrEmpty(_apiKey))
             dict["key"] = _apiKey!;
 
-        if (RemoveComments)
+        if (EmitRemoveCommentsOnObfuscate && dict.TryGetValue("command", out var command) && command == "obfuscate")
             dict["remove_comments"] = "1";
+
         if (ArrayIntCrypt)
             dict["array_int_crypt"] = "1";
         if (ArrayCharCrypt)
