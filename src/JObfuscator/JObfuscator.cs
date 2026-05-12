@@ -57,6 +57,7 @@ public sealed class JObfuscator
     public bool RenameMethods { get; set; } = true;
     public bool ShuffleMethods { get; set; } = true;
     public bool IntsMathCrypt { get; set; } = true;
+    public bool StringSplit { get; set; } = true;
     public bool CryptStrings { get; set; } = true;
     public bool IntsToArrays { get; set; } = true;
     public bool DblsToArrays { get; set; } = true;
@@ -153,6 +154,8 @@ public sealed class JObfuscator
             dict["shuffle_methods"] = "1";
         if (IntsMathCrypt)
             dict["ints_math_crypt"] = "1";
+        if (StringSplit)
+            dict["string_split"] = "1";
         if (CryptStrings)
             dict["crypt_strings"] = "1";
         if (StringCharVault)

@@ -73,6 +73,11 @@ myJObfuscator.IntsMathCrypt = true;
 myJObfuscator.DblsMathCrypt = true;
 
 //
+// split string literals into nested .concat chains (runs before string encryption)
+//
+myJObfuscator.StringSplit = true;
+
+//
 // encrypt strings using polymorphic encryption algorithms
 //
 myJObfuscator.CryptStrings = true;
@@ -159,6 +164,7 @@ const string SourceCode =
         //@Obfuscate(
         //  ints_math_crypt = true,
         //  dbls_math_crypt = true,
+        //  string_split = true,
         //  crypt_strings = true,
         //  string_char_vault = true,
         //  rename_methods = false,
