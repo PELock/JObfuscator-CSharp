@@ -8,7 +8,7 @@
 
     <!-- NuGet packaging -->
     <PackageId>JObfuscator</PackageId>
-    <Version>1.0.1</Version>
+    <Version>1.1.0</Version>
     <Authors>Bartosz Wójcik</Authors>
     <Company>PELock</Company>
     <Description>JObfuscator Web API client for .NET — obfuscate and protect Java source code via the PELock JObfuscator service.</Description>

@@ -3,7 +3,7 @@
  *
  * In this example we will obfuscate sample source with custom options.
  *
- * Version        : v1.0.0
+ * Version        : v1.1.0
  * Language       : C#
  * Author         : Bartosz Wójcik
  * Web page       : https://www.pelock.com
@@ -21,6 +21,19 @@ var myJObfuscator = new JObfuscator("ABCD-ABCD-ABCD-ABCD");
 // should the source code be compressed (both input & compressed)
 //
 myJObfuscator.EnableCompression = true;
+
+//
+// strip Java comments during parse (recommended for cleaner output size)
+//
+myJObfuscator.RemoveComments = true;
+
+//
+// extract int / char / double / string literals into encrypted array tables (early pipeline)
+//
+myJObfuscator.ArrayIntCrypt = true;
+myJObfuscator.ArrayCharCrypt = true;
+myJObfuscator.ArrayDoubleCrypt = true;
+myJObfuscator.ArrayStringCrypt = true;
 
 //
 // global obfuscation options
@@ -60,9 +73,39 @@ myJObfuscator.ShuffleMethods = true;
 myJObfuscator.IntsMathCrypt = true;
 
 //
+// encrypt doubles using java.lang.Math.* style transforms
+//
+myJObfuscator.DblsMathCrypt = true;
+
+//
 // encrypt strings using polymorphic encryption algorithms
 //
 myJObfuscator.CryptStrings = true;
+
+//
+// extract individual character literals used in encryption into auxiliary tables
+//
+myJObfuscator.StringCharVault = true;
+
+//
+// derive occasional integer literals from double / Math-heavy expressions
+//
+myJObfuscator.IntsFromDoubleMath = true;
+
+//
+// insert opaque predicates and mixer chains in the control flow
+//
+myJObfuscator.OpaqueMixerChain = true;
+
+//
+// replace straightforward boolean checks with heavier equivalent expressions
+//
+myJObfuscator.ComplexifyBooleans = true;
+
+//
+// wrap blocks with benign try/finally noise
+//
+myJObfuscator.TryFinallyNoise = true;
 
 //
 // for each method, extract all possible integers from the code and store them in an array
@@ -120,11 +163,17 @@ const string SourceCode =
         //
         //@Obfuscate(
         //  ints_math_crypt = true,
+        //  dbls_math_crypt = true,
         //  crypt_strings = true,
+        //  string_char_vault = true,
         //  rename_methods = false,
         //  rename_variables = true,
         //  shuffle_methods = true,
         //  mix_code_flow = true,
+        //  ints_from_double_math = true,
+        //  opaque_mixer_chain = true,
+        //  complexify_booleans = true,
+        //  try_finally_noise = true,
         //  ints_to_arrays = true,
         //  dbls_to_arrays = true
         // )

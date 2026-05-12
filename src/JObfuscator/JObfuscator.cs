@@ -1,7 +1,7 @@
 /******************************************************************************
  * JObfuscator WebApi interface
  *
- * Version        : v1.0.0
+ * Version        : v1.1.0
  * Language       : C#
  * Author         : Bartosz Wójcik
  * Web page       : https://www.pelock.com
@@ -57,6 +57,18 @@ public sealed class JObfuscator
     public bool CryptStrings { get; set; } = true;
     public bool IntsToArrays { get; set; } = true;
     public bool DblsToArrays { get; set; } = true;
+
+    public bool RemoveComments { get; set; } = true;
+    public bool DblsMathCrypt { get; set; } = true;
+    public bool StringCharVault { get; set; } = true;
+    public bool IntsFromDoubleMath { get; set; } = true;
+    public bool OpaqueMixerChain { get; set; } = true;
+    public bool ComplexifyBooleans { get; set; } = true;
+    public bool TryFinallyNoise { get; set; } = true;
+    public bool ArrayIntCrypt { get; set; } = true;
+    public bool ArrayCharCrypt { get; set; } = true;
+    public bool ArrayDoubleCrypt { get; set; } = true;
+    public bool ArrayStringCrypt { get; set; } = true;
 
     public JObfuscator(string? apiKey = null)
         : this(SharedClient.Value, apiKey)
@@ -118,6 +130,16 @@ public sealed class JObfuscator
         if (!string.IsNullOrEmpty(_apiKey))
             dict["key"] = _apiKey!;
 
+        if (RemoveComments)
+            dict["remove_comments"] = "1";
+        if (ArrayIntCrypt)
+            dict["array_int_crypt"] = "1";
+        if (ArrayCharCrypt)
+            dict["array_char_crypt"] = "1";
+        if (ArrayDoubleCrypt)
+            dict["array_double_crypt"] = "1";
+        if (ArrayStringCrypt)
+            dict["array_string_crypt"] = "1";
         if (MixCodeFlow)
             dict["mix_code_flow"] = "1";
         if (RenameVariables)
@@ -130,6 +152,18 @@ public sealed class JObfuscator
             dict["ints_math_crypt"] = "1";
         if (CryptStrings)
             dict["crypt_strings"] = "1";
+        if (StringCharVault)
+            dict["string_char_vault"] = "1";
+        if (DblsMathCrypt)
+            dict["dbls_math_crypt"] = "1";
+        if (IntsFromDoubleMath)
+            dict["ints_from_double_math"] = "1";
+        if (OpaqueMixerChain)
+            dict["opaque_mixer_chain"] = "1";
+        if (ComplexifyBooleans)
+            dict["complexify_booleans"] = "1";
+        if (TryFinallyNoise)
+            dict["try_finally_noise"] = "1";
         if (IntsToArrays)
             dict["ints_to_arrays"] = "1";
         if (DblsToArrays)
